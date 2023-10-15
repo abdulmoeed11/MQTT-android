@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:inputType="text"
-        android:text="https://www."
+        android:text=""
         android:hint="Enter broker URL"
         app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Client id"
+        android:hint=""
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
-        mqtt = MqttHandler()
+        mqtt = MqttHandler(this@MainActivity)
         initListeners()
     }
 
@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.button3.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Connected", Toast.LENGTH_SHORT).show()
-
             if (mqtt.isConnected()){
                 Toast.makeText(this@MainActivity, "Connected", Toast.LENGTH_SHORT).show()
             }else{
@@ -37,10 +35,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.button2.setOnClickListener {
-            if (mqtt.isConnected()){
                 val messageL = binding.editTextText2.text.toString()
-                mqtt.publish("location", messageL)
-            }
+                mqtt.publish("/moeedLocation", messageL)
         }
     }
 }
