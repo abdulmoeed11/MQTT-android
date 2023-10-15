@@ -24,7 +24,7 @@ class MqttHandler constructor(context: Context): IMqttActionListener, MqttCallba
         options.password = password.toCharArray()
         try {
             // Connect to the broker
-            client?.connect(options)
+            client?.connect(options, null, this)
         } catch (e: MqttException) {
             e.printStackTrace()
         }
