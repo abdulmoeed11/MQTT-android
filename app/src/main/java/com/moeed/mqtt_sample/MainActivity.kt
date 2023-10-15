@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             val brokerURL = binding.editText.text.toString()
             val clientId = binding.editTextText.text.toString()
+            val username = binding.editTextText3.toString()
+            val password = binding.editTextText4.toString()
             if (!brokerURL.isEmpty() && !clientId.isEmpty()){
-                mqtt.connect(brokerURL,clientId)
+                mqtt.connect(brokerURL,clientId,username,password)
             }else{
                 Toast.makeText(this@MainActivity, "Enter Info", Toast.LENGTH_LONG).show()
             }

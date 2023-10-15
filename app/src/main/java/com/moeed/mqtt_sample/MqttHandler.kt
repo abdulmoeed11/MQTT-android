@@ -20,8 +20,8 @@ class MqttHandler constructor(context: Context): IMqttActionListener, MqttCallba
         client = MqttAndroidClient(context, brokerUrl, clientId)
         client!!.setCallback(this)
         val options = MqttConnectOptions()
-        options.userName = username
-        options.password = password.toCharArray()
+//        options.userName = username
+//        options.password = password.toCharArray()
         try {
             // Connect to the broker
             client?.connect(options, null, this)
@@ -86,12 +86,14 @@ class MqttHandler constructor(context: Context): IMqttActionListener, MqttCallba
     }
 
     override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
+        exception?.printStackTrace()
         Log.d("MQTTxx", "Connection Failed")
         Toast.makeText(context, "MQTT Connection fails: ${exception.toString()}",
             Toast.LENGTH_SHORT).show()
     }
 
     override fun connectionLost(cause: Throwable?) {
+        cause?.printStackTrace()
         Toast.makeText(context, "Connection Lost", Toast.LENGTH_SHORT).show()
     }
 
