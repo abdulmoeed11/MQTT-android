@@ -3,5 +3,5 @@ This app will connect to MQTT Broker and publish messages, this application is s
 
 # Screenshots
 
-<img src="https://github.com/abdulmoeed11/MQTT-android/blob/master/mqtt-screenshot.jpeg?raw=true" alt="CryptoList width="250" height="500" /> 
+<img src="https://github.com/abdulmoeed11/MQTT-android/blob/master/mqtt-screenshot.jpeg?raw=true" alt="mqtt" width="250" height="500" /> 
 
